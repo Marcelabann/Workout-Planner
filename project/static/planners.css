@@ -1,0 +1,12 @@
+a {
+    color: white;
+    text-decoration: solid;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+select:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add planner
+{% endblock %}
+
+{% block main %}
+    <form action="/add_planner" method="post">
+
+        <!-- select day of the week -->
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="day_of_week">
+                <option selected disabled value="">Day of the week</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+            </select>
+        </div>
+
+        <!-- select muscle -->
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="muscle">
+                <option selected value="" disabled>Muscle</option>
+                <option value="back">Back</option>
+                <option value="quadriceps">Quadriceps</option>
+                <option value="fullbody">Fullbody</option>
+                <option value="cardio">Cardio</option>
+                <option value="glutes">Glutes</option>
+                <option value="hamstrings">Hamstrings</option>
+                <option value="chest">Chest</option>
+                <option value="biceps">Biceps</option>
+                <option value="triceps">Triceps</option>
+                <option value="abdominals">Abdominals</option>
+                <option value="forearms">Forearms</option>
+                <option value="calves">Calves</option>
+            </select>
+        </div>
+
+        <!-- type in name of the exercise -->
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="exercise" placeholder="Exercise" type="text">
+        </div>
+
+        <!-- type in number of sets -->
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="sets" placeholder="Sets" type="number">
+        </div>
+
+        <!-- type in number of reps -->
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="reps" placeholder="Repetitions" type="number">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add new planner</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Planners
+{% endblock %}
+
+{% block main %}
+    <form action="/planners" method="post">
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="filter">
+                <option selected disabled value="">Show All</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Filter</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            
+            <tr style="height: 50px">
+                <th style="font-size: 20pt; width: 100px" class="text-start">Day</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Muscle</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Exercise</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Sets</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Repetitions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for exercise in exercises %}
+                <tr>
+                    <td class="text-start">{{ exercise.day_week }}</td>
+                    <td class="text-end">{{ exercise.muscle }}</td>
+                    <td class="text-end">{{ exercise.exercise }}</td>
+                    <td class="text-end">{{ exercise.sets }}</td>
+                    <td class="text-end">{{ exercise.reps }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        
+        <button class="btn btn-primary"><a href="/delete">Delete</a></button>
+                    
+    </div>
+
+{% endblock %}

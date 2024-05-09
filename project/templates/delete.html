@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Planner
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            
+            <tr style="height: 50px">
+                <th style="font-size: 20pt; width: 100px" class="text-start">Day</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Muscle</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Exercise</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Sets</th>
+                <th style="font-size: 20pt; width: 100px" class="text-end">Repetitions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action="/delete" method="post">
+                {% for exercise in exercises %}
+                    <tr>
+                        <td class="text-start">{{ exercise.day_week }}</td>
+                        <td class="text-end">{{ exercise.muscle }}</td>
+                        <td class="text-end">{{ exercise.exercise }}</td>
+                        <td class="text-end">{{ exercise.sets }}</td>
+                        <td class="text-end">{{ exercise.reps }}</td>
+                        <td>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="radio" name="delete" id="{{ exercise.id }}" value="{{ exercise.id }}">
+                                <label class="form-check-label" for="{{ exercise.id }}">Select</label>
+                            
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td class="text-end">
+                        <button class="btn btn-primary" type="submit">Delete</button>
+                    </td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+
+{% endblock %}

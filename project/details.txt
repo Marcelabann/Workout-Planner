@@ -1,0 +1,41 @@
+- What will your software do?
+    it is going to be a web-app.
+    it is to be used as a workout planner, for people to organize their workout routines.
+    * get to know new exercises for each muscle (image/video and description)
+    * make their own planner, with a list of exercises for each day, as well as how many reps
+        * be able to add exercises to the list
+        * be able to remove exercises to the list
+    * be able to register, login and logout
+
+
+- what features will it have?
+    * homepage - presentation of the website and its functionalities
+    * register
+    * login
+    * logout
+    * PLanners - see tables of planners for each day
+        filter button to show table for the selected day
+    * Add planner
+        add day of the week (select)
+        add muscle (select)
+        add exercise
+        add sets
+        add reps
+
+
+- how will it be executed?
+    * register, login and logout by flask_session
+    * back-end with python
+    * front-end with HTML and CSS
+    * list of exercises with SQLite3
+
+
+- What topics do you need to research?
+    * more details about bootstrap
+    * more details about linking images
+    * more styling details with CSS
+    * more about HTML's forms (for POST requests)
+    * more about HTML's tags
+
+
+    
